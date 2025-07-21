@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  test-runner:
+    build: .
+    volumes:
+      - ./repos:/workspace/repos
+      - ./results:/workspace/results
+    environment:
+      - PYTHONPATH=/workspace
+    working_dir: /workspace
+    command: tail -f /dev/null  # Keep container running
